@@ -10,11 +10,14 @@ module.exports = {
   },
   plugins: [new HtmlWebpackPlugin({title: 'Development', template: 'index.html'})],
   devServer: {
+    static: {
+        directory: 'index.html',
+      },
     compress: true,
     port: 8080,
     hot: true,
     proxy: {
-      '/': 'http://localhost:3000',
+      '/api': 'http://localhost:3000'
     },
   },
   module: {

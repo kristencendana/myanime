@@ -3,14 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>myAnime</title>
+  <link rel="stylesheet" href="client/styles.css">
 </head>
 <body>
   <h1>myAnime List</h1>
-  <div id="root"></div>
+  <div>
+    <h1>
+      Login
+    </h1>
+    <form method="POST" action='/login'>
+      <input name='username' type='text' placeholder='username'></input>
+      <input name='password' type='password' placeholder='password'></input>
+      <input type='submit' value='login'></input>
+    </form>
+    <a href='./signup'>Sign up</a>
+  </div>
+  <!-- <div id="root"></div> -->
 
   <!-- script for webpack and webpack-dev-server challenge -->
   <script src="build/bundle.js"></script>
-  
+
 </body>
 
 </html>
