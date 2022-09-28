@@ -8,7 +8,7 @@ import actionsReducer from './actionsReducer'
 const reducers = combineReducers({
   // if we had other reducers, they would go here
   // markets: marketsReducer,
-  state: actionsReducer,
+  animes: actionsReducer,
 });
 // make the combined reducers available for import
 export default reducers;

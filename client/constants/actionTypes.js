@@ -7,3 +7,4 @@
 // export const DELETE_CARD = 'DELETE_CARD';
 
 export const SET_LOGIN = 'SET_LOGIN';
+export const ADD_ANIME = 'ADD_ANIME';
