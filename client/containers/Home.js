@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState, Component } from 'react';
 // import any other smaller components
+import axios from 'axios';
 import AnimeContainer from './AnimeContainer.js';
 import TotalsDisplay from '../components/TotalsDisplay';
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -14,16 +15,23 @@ class Home extends Component {
   }
 
   //Loading anime upon opening App
-
+  // useEffect(() => {
+  //   console.log("running useEffect");
+  //   axios.get('https://api.myanimelist.net/v2/anime/10357?fields=rank,mean,alternative_titles> X-MAL-CLIENT-ID: 0650bbe806ecd86d323dc55b26979089')
+  //     .then(res => alert("Successful"))
+  //     .catch(err => console.log(err));
+  // }, []);
   //Loading flashcards upon opening App
   // GET https://api.myanimelist.net/v2/anime/10357?fields=rank,mean,alternative_titles
 // > X-MAL-CLIENT-ID: a1b2c3d4e5f6
   render() {
     return (
-      <div>
+      <div className="container">
         <h1>
           Home Page:
         </h1>
+        <TotalsDisplay />
+        <AnimeContainer />
       </div>
         
       // <div>

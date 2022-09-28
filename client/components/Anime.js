@@ -22,13 +22,13 @@
  
    return (
      <div className="AnimeBox">
-       <h4>Anime Name:</h4>
+       <h4>AnimeBox: Anime Name:</h4>
        {/* insert in anime name {props.market.marketId} */}
        {/* <h4>Location:{props.market.location}</h4>
        <h4>Cards:{props.market.cards}</h4> */}
        {/* <h4>% of total:{props.market.percentOfTotal}</h4> */}
        {/* <button id="button" name="addCard" onClick={addCardButton}>Add Card</button> */}
-       <button id="button" name="deleteAnime" onClick={deleteAnimeButton}>Delete Card</button>
+       {/* <button id="button" name="deleteAnime" onClick={deleteAnimeButton}>Delete Card</button> */}
      </div>
    );
  };

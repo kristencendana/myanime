@@ -12,11 +12,13 @@ class AnimeContainer extends Component {
   }
 
   render() {
-    <div>
-      <AnimeCreator />
+    return(
+    <div className="innerbox">
+      <AnimeCreator /> 
       <AnimeList />
-      <RecommendedList />
+      {/* <RecommendedList /> */}
     </div>
+    )
   }
 }
 
