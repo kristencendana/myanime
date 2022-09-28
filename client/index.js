@@ -36,6 +36,6 @@ import App from './App';
 import styles from './scss/application.scss';
 
 render(
-  <App />,
+    <App />,
   document.getElementById('root')
 );

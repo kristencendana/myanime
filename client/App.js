@@ -75,9 +75,18 @@ class App extends Component {
     //   <Row key={i} row={i} letters={letters} handleClick={handleClick} />
     // ));
     return (
-      <p>App Component</p>
-      
-    );
+      <div>
+        <p>App Component</p>
+        <Login />
+        <Home />
+      </div>
+      // <Router>
+        
+        /* <Switch>
+          <Route path='/' component={Home} />
+          <Route path='/login' component={Login} />
+        </Switch> */
+    )
   }
 }
 

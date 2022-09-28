@@ -13,16 +13,19 @@ class Home extends Component {
     super(props);
   }
 
+  //Loading anime upon opening App
+
   //Loading flashcards upon opening App
   // GET https://api.myanimelist.net/v2/anime/10357?fields=rank,mean,alternative_titles
 // > X-MAL-CLIENT-ID: a1b2c3d4e5f6
   render() {
     return (
-      <Router>
+      <div>
         <h1>
           Home Page:
         </h1>
-      </Router>
+      </div>
+        
       // <div>
         
       //   {/* <input>Search Bar</input> */}
