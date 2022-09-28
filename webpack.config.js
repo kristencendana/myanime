@@ -7,9 +7,11 @@ module.exports = {
   output: {
     // path: path.resolve(__dirname, './dist'),
     filename: './build/bundle.js',
+    publicPath: '/'
   },
   plugins: [new HtmlWebpackPlugin({title: 'Development', template: 'index.html'})],
   devServer: {
+    historyApiFallback: true,
     static: {
         directory: 'index.html',
       },

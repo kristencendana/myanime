@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>myAnime</title>
-  <link rel="stylesheet" href="client/styles.css">
+  <link rel="stylesheet">
+  <!-- href="client/scss/application.scss" -->
+  <base href="/" />
 </head>
 <body>
   <h1>myAnime List</h1>
-  <div>
+  <!-- <div>
     <h1>
       Login
     </h1>
@@ -17,13 +19,12 @@
       <input type='submit' value='login'></input>
     </form>
     <a href='./signup'>Sign up</a>
-  </div>
-  <!-- <div id="root"></div> -->
+  </div> -->
+  <div id="root"></div>
 
   <!-- script for webpack and webpack-dev-server challenge -->
-  <script src="build/bundle.js"></script>
-
+  <!-- <script src="build/bundle.js"></script> -->
+  <script src="/build/bundle.js"></script>   
 </body>
-
 </html>
 

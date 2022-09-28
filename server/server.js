@@ -14,18 +14,30 @@ mongoose.connect(MONGO_URI, {
   // sets the name of the DB that our collections are part of
   dbName: "people",
 })
-.then(() => console.log("Connected to Mongo DB."))
+.then(() => {
+  console.log("Connected to Mongo DB.")
+  // console.log(NODE_ENV);
+  console.log(process.env.NODE_ENV);
+})
 .catch((err) => console.log(err));
 
 // controllers:
 const userController = require("./controllers/userController");
 
+// app.use('/static', express.static(path.join(__dirname, '../client/build//static')));
+// app.get('*', function(req, res) {
+//   res.sendFile('index.html', {root: path.join(__dirname, '../../client/build/')});
+// });
+
 // statically serve everything in the build folder on the route '/build'
 app.use('/build', express.static(path.join(__dirname, '../dist/build')));
 app.use(express.json());
-app.use(express.urlencoded());
+// app.use(express.urlencoded());
 // FIRST, need to get proper log-in credentials
   // need to get first HTML element (for login) with root '/'
+  // app.get('*', function(req, res) {
+  //   res.sendFile('index.html', {root: path.join(__dirname, '../../dist/build')});
+  // });
 app.get('/', (req, res) => {
   return res.status(200).sendFile(path.join(__dirname, '../index.html'));
 })
@@ -34,14 +46,14 @@ app.get('/', (req, res) => {
 //   return res.status(200).sendFile(path.join(__dirname, '../index.html'));
 // })
 // for css styling
-app.get("/styles.css", (req, res) => {
-  return res.status(200).sendFile(path.join(__dirname + "/client/styles.css"));
-});
+// app.get("/styles.css", (req, res) => {
+//   return res.status(200).sendFile(path.join(__dirname + "/client/styles.css"));
+// });
 
 //actual
-// app.get("/api/signup", (req, res) => {
-//   res.sendFile(path.resolve(__dirname, "../client/signup.html"));
-// });
+app.get("/api/signup", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../client/signup.html"));
+});
 // if clicks sign up
 //proxy
 app.get("/signup", (req, res) => {
@@ -55,7 +67,8 @@ app.post('/signup', userController.createUser, (req, res) => {
 
 // login userController.verifyUser,
 app.post('/login', (req, res) => {
-  return res.status(200).sendFile(path.resolve(__dirname, "../client/loggedin.html"));
+  return res.status(200).redirect("/success");
+  // .sendFile(path.resolve(__dirname, "../client/loggedin.html"));
 })
 
 

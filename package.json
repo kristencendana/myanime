@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server/server.js",
     "build": "export NODE_ENV=production && webpack",
-    "dev": "export NODE_ENV=development && webpack serve --open",
+    "dev": "export NODE_ENV=development && webpack serve --open && export NODE_ENV=development nodemon server/server.js",
     "test": "test"
   },
   "repository": {
@@ -45,6 +45,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.4",
+    "react-router-dom": "^6.4.1",
     "redux": "^4.2.0",
     "redux-devtools-extension": "^2.13.9"
   }
