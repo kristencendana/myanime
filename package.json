@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server/server.js",
     "build": "export NODE_ENV=production && webpack",
-    "dev": "export NODE_ENV=development && webpack serve --open && export NODE_ENV=development nodemon server/server.js",
+    "dev": "export NODE_ENV=development && webpack serve --open && nodemon server/server.js",
     "test": "test"
   },
   "repository": {
