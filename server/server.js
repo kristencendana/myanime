@@ -17,7 +17,7 @@ mongoose.connect(MONGO_URI, {
 .then(() => {
   console.log("Connected to Mongo DB.")
   // console.log(NODE_ENV);
-  console.log(process.env.NODE_ENV);
+  // console.log(process.env.NODE_ENV);
 })
 .catch((err) => console.log(err));
 
@@ -60,17 +60,24 @@ app.get("/signup", (req, res) => {
   res.sendFile(path.resolve(__dirname, "../client/signup.html"));
 });
 
+app.post('/api/signup', userController.createUser, (req, res) => {
+  return res.status(200).redirect("/");
+})
+
 //posting signup
 app.post('/signup', userController.createUser, (req, res) => {
   return res.status(200).redirect("/");
 })
 
 // login userController.verifyUser,
-app.post('/login', (req, res) => {
-  return res.status(200).redirect("/success");
-  // .sendFile(path.resolve(__dirname, "../client/loggedin.html"));
-})
-
+// app.post('/login', (req, res) => {
+//   return res.status(200).redirect("/success");
+//   // .sendFile(path.resolve(__dirname, "../client/loggedin.html"));
+// })
+// app.post('/api/login', (req, res) => {
+//   return res.status(200).redirect("/success");
+//   // .sendFile(path.resolve(__dirname, "../client/loggedin.html"));
+// })
 
 // AFTER login, then on second page show display of anime list
 
