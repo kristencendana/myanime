@@ -8,6 +8,4 @@ const store = createStore(
   composeWithDevTools()
 );
 
-
-
 export default store;
