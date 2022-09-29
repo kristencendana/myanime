@@ -1,7 +1,7 @@
  import React, { Component} from 'react';
 //  import Anime from './Anime.js';
  import { connect } from 'react-redux';
- 
+
  import Anime from './Anime.js';
  const mapStateToProps = state => ({
    animeList: state.animes.animeList

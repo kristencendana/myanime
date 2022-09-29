@@ -13,7 +13,9 @@ const AnimeCreator = props => {
   //button click or dispatch
   const handleClick = () => {
     const input = document.querySelector('input');
-    props.addAnimeActionCreator(input.value);
+    console.log(input.value);
+    console.log(input);
+    props.addAnime(input.value);
     // props.addMarket(input.value);
     input.value = '';
   };
