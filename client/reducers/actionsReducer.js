@@ -19,13 +19,12 @@ const actionsReducer = (state = initialState, action) => {
       newState.isLoggedIn = actions.payload;
       return newState;
     case types.ADD_ANIME:
-      newState.newAnimeName = document.getElementById('input').value;
+      // newState.newAnimeName = action.payload;
       newState.totalAnimes++;
       newAnime = {
-        animeName: newState.newAnimeName,
+        animeName: action.payload,
         stars: 1
       }
-
       animeList = state.animeList.slice();
       animeList.push(newAnime);
       newState.animeList = animeList;

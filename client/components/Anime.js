@@ -8,7 +8,10 @@
    deleteAnime : (animeName) => dispatch(actions.deleteAnimeActionCreator(animeName)),
    addAnime : (animeName) => dispatch(actions.addAnimeActionCreator(animeName))
  });
- 
+ const mapStateToProps = state => ({
+  animeList: state.animes.animeList
+});
+
  const Anime = props => {
  
    const addStarsButton = () => {
@@ -24,7 +27,8 @@
    return (
      <div className="AnimeBox">
        <h4>AnimeBox: Anime Name:</h4>
-       {/* insert in anime name {props.market.marketId} */}
+        {props.anime.animeName}
+        {props.anime.stars}
        {/* <h4>Location:{props.market.location}</h4>
        <h4>Cards:{props.market.cards}</h4> */}
        {/* <h4>% of total:{props.market.percentOfTotal}</h4> */}

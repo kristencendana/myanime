@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux'; // you only need to use connect when you are either mapDispatchToprops or mapStateToProps in that file
 import * as actions from '../actions/actions.js';
 
@@ -10,12 +10,16 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const AnimeCreator = props => {
+
+  const [ animeName, setAnime ] = useState("");
+
   //button click or dispatch
   const handleClick = () => {
     const input = document.querySelector('input');
-    console.log(input.value);
-    console.log(input);
-    props.addAnime(input.value);
+    // console.log("input.value"+ input.value);
+    // console.log("input"+ input);
+    // console.log(animeName)
+    props.addAnime(animeName);
     // props.addMarket(input.value);
     input.value = '';
   };
@@ -24,7 +28,7 @@ const AnimeCreator = props => {
     <div className="createNewAnime">
       <h4>Create New Anime</h4>
       <div>
-        <input id="input" type="text" name="submit" placeholder='anime name'></input>
+        <input id="input" onChange={e => setAnime(e.target.value)} type="text" name="submit" placeholder='anime name'></input>
         <button id ="button" onClick={handleClick} >Add Anime</button>
       </div>
     </div>
