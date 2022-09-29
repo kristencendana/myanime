@@ -6,8 +6,8 @@ const AnimeCreator = props => {
   //button click or dispatch
   const handleClick = () => {
     const input = document.querySelector('input');
-    props.setLocation(input.value);
-    props.addMarket(input.value);
+    props.addAnimeActionCreator(input.value);
+    // props.addMarket(input.value);
     input.value = '';
   };
 

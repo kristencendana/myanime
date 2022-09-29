@@ -31,13 +31,16 @@ const mapStateToProps = state => ({
 class AnimeContainer extends Component {
   constructor(props) {
     super(props);
+    console.log("props"+this.props);
   }
 
   render() {
+    console.log("props: "+ this.props.animeList);
+    console.log("Is it undefined: " + this.props.animeList == undefined);
     return(
     <div className="innerbox">
       <AnimeCreator /> 
-      <AnimeList />
+      {/* <AnimeList animeList={this.props.animeList}/> */}
       {/* <RecommendedList /> */}
     </div>
     )

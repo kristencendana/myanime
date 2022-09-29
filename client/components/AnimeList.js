@@ -9,19 +9,23 @@
  
  const AnimeList = props => {
    const animes = [];
-  //  for (let i = 0; i < props.marketList.length; i++) {
+  //  console.log("animeList"+props.animeList);
+  //  console.log("animeList"+props.animeList.length);
+  //  if (props.animeList.length){
+  //  console.log("animeList"+ this.props.animeList);
+  //  for (let i = 0; i < props.animeList.length; i++) {
   //    animes.push(<Anime anime = {props.animeList[i]}/>);
   //    console.log([i])
+  //  }
   //  }
    return(
      <div className="displayBox">
        <h4>Animes</h4>
-       {/* {markets} */}
-       <Anime anime ={props.animeList} />
+       {animes}
+       {/* <Anime anime ={props.animeList} /> */}
      </div>
    );
  };
  
  
- export default (AnimeList);
- // connect(mapStateToProps, null)
+ export default connect(mapStateToProps, null)(AnimeList);
