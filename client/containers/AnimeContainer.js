@@ -40,7 +40,7 @@ class AnimeContainer extends Component {
     return(
     <div className="innerbox">
       <AnimeCreator /> 
-      {/* <AnimeList animeList={this.props.animeList}/> */}
+      <AnimeList animeList={this.props.animeList}/>
       {/* <RecommendedList /> */}
     </div>
     )
