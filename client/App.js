@@ -83,7 +83,10 @@ class App extends Component {
   //   }
   //   return <Login />;
   // }
-
+  // componentDidMount() => {
+  //   this.props.isLoggedIn = document.cookie.ssid??
+  // }
+// cookie.isloggedin is what you set on the backend when you hanel the post to /login
   render() {
     // const { rows, turn, winner, gameList } = this.state;
     // const handleClick = this.handleClick;
@@ -95,7 +98,8 @@ class App extends Component {
         {/* <p>App Component {Greeting}</p> */} 
         {!(this.props.isLoggedIn) && <Login />}
         {/* <Login /> */}
-        <Home />
+        {this.props.isLoggedIn && <Home />}
+        {/* dont freak out when not see home */}
       </div>
       // <Router>
         
