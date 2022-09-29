@@ -29,6 +29,33 @@ const actionsReducer = (state = initialState, action) => {
       animeList.push(newAnime);
       newState.animeList = animeList;
       return newState;
+    case types.ADD_STARS:
+      // animeList = state.animeList.slice();
+      // action.payload.stars++;
+      // newState = {...state, animeList: [...state.animeList]}
+      newState.animeList = state.animeList.map((anime, i) => {
+        if (state.animeList[i].animeName == action.payload){
+          const stars = anime.stars + 1;
+          return {
+            animeName: action.payload, 
+            stars: stars};
+        } else {
+          return anime;
+        }
+      });
+      return newState;
+    case types.REMOVE_STARS:
+      newState.animeList = state.animeList.map((anime, i) => {
+        if (state.animeList[i].animeName == action.payload){
+          const stars = anime.stars - 1;
+          return {
+            animeName: action.payload, 
+            stars: stars};
+        } else {
+          return anime;
+        }
+      });
+      return newState;
     default: {
       return state;
     }
