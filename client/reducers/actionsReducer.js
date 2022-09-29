@@ -35,7 +35,7 @@ const actionsReducer = (state = initialState, action) => {
       // newState = {...state, animeList: [...state.animeList]}
       newState.animeList = state.animeList.map((anime, i) => {
         if (state.animeList[i].animeName == action.payload){
-          const stars = anime.stars + 1;
+          const stars = Math.min(anime.stars + 1, 5);
           return {
             animeName: action.payload, 
             stars: stars};
@@ -47,7 +47,7 @@ const actionsReducer = (state = initialState, action) => {
     case types.REMOVE_STARS:
       newState.animeList = state.animeList.map((anime, i) => {
         if (state.animeList[i].animeName == action.payload){
-          const stars = anime.stars - 1;
+          const stars = Math.max(0, anime.stars - 1);
           return {
             animeName: action.payload, 
             stars: stars};
