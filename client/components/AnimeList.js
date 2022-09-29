@@ -9,8 +9,8 @@
  
  const AnimeList = props => {
    const animes = [];
-   console.log("props :" + props);
-   console.log("animeList"+props.animeList);
+  //  console.log("props :" + props);
+  //  console.log("animeList"+props.animeList);
   //  console.log("animeList"+props.animeList.length);
   //  if (props.animeList.length){
   //  console.log("animeList"+ this.props.animeList);

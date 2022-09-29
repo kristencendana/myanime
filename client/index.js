@@ -34,13 +34,21 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import App from './App.js';
 import store from './store';
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from './containers/Login';
+import Home from './containers/Home';
 // uncomment so that webpack can bundle styles
 import styles from './scss/application.scss';
 
 render(
   <Provider store={store}>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<App />} />
+        <Route path='Login' element={<Login />} />
+        <Route path='Home' element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );

@@ -4,7 +4,6 @@ const app = express();
 const path = require('path');
 const PORT = 3000;
 const mongoose = require('mongoose');
-
 // the mongoDB database
 const MONGO_URI = "mongodb+srv://kristencendana:143Iloveonepiece!@cluster0.g51mo0f.mongodb.net/?retryWrites=true&w=majority"
 mongoose.connect(MONGO_URI, {
@@ -23,7 +22,8 @@ mongoose.connect(MONGO_URI, {
 
 // controllers:
 const userController = require("./controllers/userController");
-
+const cookieController = require('./controllers/cookieController');
+const sessionController = require('./controllers/sessionController');
 // app.use('/static', express.static(path.join(__dirname, '../client/build//static')));
 // app.get('*', function(req, res) {
 //   res.sendFile('index.html', {root: path.join(__dirname, '../../client/build/')});
@@ -38,7 +38,7 @@ app.use(express.urlencoded());
   // app.get('*', function(req, res) {
   //   res.sendFile('index.html', {root: path.join(__dirname, '../../dist/build')});
   // });
-app.get('/', (req, res) => {
+app.get('/', cookieController.setCookie, (req, res) => {
   return res.status(200).sendFile(path.join(__dirname, '../index.html'));
 })
 
@@ -65,13 +65,15 @@ app.get("/signup", (req, res) => {
 // })
 
 //posting signup
-app.post('/submit', userController.createUser, (req, res) => {
-  return res.status(200).redirect("/");
+app.post('/signup', userController.createUser,
+cookieController.setSSIDCookie, (req, res) => {
+  return res.status(200); // maybe redirect??
 })
 
 // login userController.verifyUser,
-app.post('/login', userController.verifyUser, (req, res) => {
-  return res.status(200).redirect("/");
+app.post('/login', userController.verifyUser, cookieController.setSSIDCookie, 
+(req, res) => {
+  return res.status(200).send("User Found!");
   // .sendFile(path.resolve(__dirname, "../client/loggedin.html"));
 })
 // app.post('/api/login', (req, res) => {

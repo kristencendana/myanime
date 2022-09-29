@@ -8,8 +8,8 @@ userController.createUser = (req, res, next) => {
   const { username, password } = req.body;
   // console.log("req"+ JSON.stringify(req));
   // console.log("req.body" + JSON.stringify(req.body));
-  console.log("username"+ username)
-  console.log("password"+ password)
+  console.log(username)
+  console.log(password)
   if (!username || !password) {
     return next("Username and password are undefined");
   }
@@ -30,7 +30,10 @@ userController.createUser = (req, res, next) => {
 
 userController.verifyUser = (req, res, next) => {
   // write code here
+  console.log("verify");
   const { username, password } = req.body;
+  console.log("username");
+  console.log("password");
   if (!username || !password) {
     return next("Username and password are undefined");
   }

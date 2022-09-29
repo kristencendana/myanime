@@ -47,6 +47,7 @@ import React, { Component } from 'react';
 import Login from './containers/Login'
 import Home from './containers/Home'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom';
 // import Row from './Row';
 // import GameList from './GameList';
 // import Leaders from './Leaders';
@@ -83,11 +84,15 @@ class App extends Component {
   //   }
   //   return <Login />;
   // }
-  // componentDidMount() => {
-  //   this.props.isLoggedIn = document.cookie.ssid??
+  componentDidMount() {
+    console.log(this.props.isLoggedIn);
+  }
+    // this.props.isLoggedIn = 
+    //document.cookie.ssid??
   // }
 // cookie.isloggedin is what you set on the backend when you hanel the post to /login
   render() {
+    console.log("loggedIn"+ this.props.isLoggedIn);
     // const { rows, turn, winner, gameList } = this.state;
     // const handleClick = this.handleClick;
     // const rowElements = rows.map((letters, i) => (
@@ -95,10 +100,16 @@ class App extends Component {
     // ));
     return (
       <div>
+        <p>HelloWorld</p>
+        
+        {/* <Link to="/Login">Login</Link> |{" "} */}
+        {/* <Link to="/Home">Home</Link>  */}
         {/* <p>App Component {Greeting}</p> */} 
+        {/* <Home /> */}
         {!(this.props.isLoggedIn) && <Login />}
-        {/* <Login /> */}
-        {this.props.isLoggedIn && <Home />}
+        {/* {this.props.isLoggedIn && <Home />} */}
+        {/* <Login />
+        <Home/> */}
         {/* dont freak out when not see home */}
       </div>
       // <Router>

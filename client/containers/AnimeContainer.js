@@ -42,8 +42,8 @@ class AnimeContainer extends Component {
   }
 
   render() {
-    console.log("props: "+ this.props.animeList);
-    console.log("Is it undefined: " + this.props.animeList == undefined);
+    // console.log("props: "+ this.props.animeList);
+    // console.log("Is it undefined: " + this.props.animeList == undefined);
     return(
     <div className="innerbox">
       <AnimeCreator /> 

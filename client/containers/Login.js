@@ -4,8 +4,11 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { bindActionCreators } from 'redux';
-import * as actions from '../actions/actions';
+// import * as actions from '../actions/actions';
 import { connect } from 'react-redux';
+import { setLoginActionCreator } from '../actions/actions';
+import Home from './Home';
+import { useNavigate } from "react-router-dom";
 // import ACTIONS from '../constants/actionTypes';
 // import { LoaderOptionsPlugin } from 'webpack';
 // import any other smaller components
@@ -18,44 +21,73 @@ const mapDispatchToProps = dispatch => ({
   setLogin : (boolean) => dispatch(actions.setLoginActionCreator(boolean))
 });
 
-class Login extends Component {
-  constructor(props) {
-    super(props);
-  }
+const mapStateToProps = state => ({
+  // provide pertinent state here
+  isLoggedIn: false,
+  totalAnime: state.animes.totalAnime,
+  animeList: state.animes.animeList,
+});
 
-  handleLoginClick() {
+const Login = () => {
+  const [isLoggedIn, setUpdate] = useState(false);
+  // constructor(props) {
+  //   super(props);
+  //   console.log(props);
+  //   console.log(this.props);
+  //   this.handleLoginClick = this.handleLoginClick.bind(this);
+  //   // const [isLoggedIn, setLogins] = useState('');
+  // }
+
+  const handleLoginClick = async () => {
+    // const navigate = useNavigate();
     console.log("using login click");
+    let username = document.getElementById('username').value;
+    let password = document.getElementById('password').value;
+    console.log(username);
+    console.log(password);
+    const user = {
+      username: username,
+      password: password
+    };
     alert("buttonclicked");
-    axios.post('/login', {
-      // username: req.body.username,
-      // password: req.body.password
-      // ***("localhost:"{PORT})
-    })
-    .then((response) => {
+    try {
+      const response = await axios.post('/login', user);
       console.log(response.data);
       // this.props.isLoggedIn = true;
-        // Handle data
-        return dispatch({type:ACTIONS.SET_LOGIN, payload: true})
-    })
-    .catch((error) => {
+      // Handle data
+      // dispatch({ type: actions.SET_LOGIN, payload: true });
+      // console.log(props);
+      // this.props.isLoggedIn = true;
+      // setUpdate(true);
+      // navigate('/Home');
+      // console.log(props);
+      // props.setLogin(true);
+    } catch (error) {
       console.log(error);
-      return dispatch({type:ACTIONS.SET_LOGIN, payload: true});
-    })
+    }
   }
-  render() {
+
+  // componentDidMount(){
+  //   if (this.props.isLoggedIn){
+  //     let insert = 'this.props.isLoggedIn && <Home />';
+  //   }
+  //   // console.log(this.props.isloggedIn);
+  // }
+  // render() {
     return (
+    
       <div>
         <h1>Login</h1>
-        {/* method="POST" action='/login' */}
-          <form>
-            <input name='username' type='text' placeholder='username'></input>
-            <input name='password' type='password' placeholder='password'></input>
-            <input onClick={this.handleLoginClick} value='login'></input>
+        {/* method="POST" action='/login' type='submit' */}
+          <form >
+            <input id="username" name='username' type='text' placeholder='username'></input>
+            <input id="password" name='password' type='password' placeholder='password'></input>
+            <input onClick={handleLoginClick} value='login'></input>
           </form>
           <a href='./signup'>Sign up</a> 
       </div> 
     );
-  }
+  // }
 }
 
 
@@ -85,7 +117,7 @@ class Login extends Component {
    
 
 // export default Login;
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
 
 
 
