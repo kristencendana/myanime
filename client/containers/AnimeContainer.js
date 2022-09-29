@@ -13,6 +13,13 @@ const mapStateToProps = state => ({
   animeList: state.animes.animeList,
 });
 
+const mapDispatchToProps = dispatch => ({
+  addStars : (animeName) => dispatch(actions.addStarsActionCreator(animeName)),
+  removeStars : (animeName) => dispatch(actions.removeStarsActionCreator(animeName)),
+  deleteAnime : (animeName) => dispatch(actions.deleteAnimeActionCreator(animeName)),
+  addAnime : (animeName) => dispatch(actions.addAnimeActionCreator(animeName))
+});
+
 // const mapDispatchToProps = dispatch => ({
 //   // create functions that will dispatch action creators to update props' 
 //   // method : func def
@@ -47,5 +54,5 @@ class AnimeContainer extends Component {
   }
 }
 
-export default connect(mapStateToProps, null)(AnimeContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(AnimeContainer);
 // export default AnimeContainer;

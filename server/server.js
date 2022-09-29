@@ -32,7 +32,7 @@ const userController = require("./controllers/userController");
 // statically serve everything in the build folder on the route '/build'
 app.use('/build', express.static(path.join(__dirname, '../dist/build')));
 app.use(express.json());
-// app.use(express.urlencoded());
+app.use(express.urlencoded());
 // FIRST, need to get proper log-in credentials
   // need to get first HTML element (for login) with root '/'
   // app.get('*', function(req, res) {
@@ -51,29 +51,29 @@ app.get('/', (req, res) => {
 // });
 
 //actual
-app.get("/api/signup", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../client/signup.html"));
-});
+// app.get("/api/signup", (req, res) => {
+//   res.sendFile(path.resolve(__dirname, "../client/signup.html"));
+// });
 // if clicks sign up
 //proxy
 app.get("/signup", (req, res) => {
   res.sendFile(path.resolve(__dirname, "../client/signup.html"));
 });
 
-app.post('/api/signup', userController.createUser, (req, res) => {
-  return res.status(200).redirect("/");
-})
+// app.post('/api/signup', userController.createUser, (req, res) => {
+//   return res.status(200).redirect("/");
+// })
 
 //posting signup
-app.post('/signup', userController.createUser, (req, res) => {
+app.post('/submit', userController.createUser, (req, res) => {
   return res.status(200).redirect("/");
 })
 
 // login userController.verifyUser,
-// app.post('/login', (req, res) => {
-//   return res.status(200).redirect("/success");
-//   // .sendFile(path.resolve(__dirname, "../client/loggedin.html"));
-// })
+app.post('/login', userController.verifyUser, (req, res) => {
+  return res.status(200).redirect("/");
+  // .sendFile(path.resolve(__dirname, "../client/loggedin.html"));
+})
 // app.post('/api/login', (req, res) => {
 //   return res.status(200).redirect("/success");
 //   // .sendFile(path.resolve(__dirname, "../client/loggedin.html"));

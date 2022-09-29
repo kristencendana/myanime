@@ -46,19 +46,27 @@
 import React, { Component } from 'react';
 import Login from './containers/Login'
 import Home from './containers/Home'
+import { connect } from 'react-redux'
 // import Row from './Row';
 // import GameList from './GameList';
 // import Leaders from './Leaders';
 
-let gameStore = [];
+// let gameStore = [];
 
-function getInitialState() {
-  return {
-    username: undefined,
-    password: undefined
-  };
-}
+// function getInitialState() {
+//   return {
+//     username: undefined,
+//     password: undefined
+//   };
+// }
 
+
+const mapStateToProps = state => ({
+  // provide pertinent state here
+  totalAnime: state.animes.totalAnime,
+  animeList: state.animes.animeList,
+  isLoggedIn: state.animes.isLoggedIn
+});
 
 class App extends Component {
   constructor(props) {
@@ -67,6 +75,14 @@ class App extends Component {
     // this.state = getInitialState();
   }
   
+  // Comp
+  // Greeting(props) {
+  //   const isLoggedIn = props.isLoggedIn;
+  //   if (isLoggedIn){
+  //     return <Home />;
+  //   }
+  //   return <Login />;
+  // }
 
   render() {
     // const { rows, turn, winner, gameList } = this.state;
@@ -76,8 +92,9 @@ class App extends Component {
     // ));
     return (
       <div>
-        <p>App Component</p>
-        <Login />
+        {/* <p>App Component {Greeting}</p> */} 
+        {!(this.props.isLoggedIn) && <Login />}
+        {/* <Login /> */}
         <Home />
       </div>
       // <Router>
@@ -90,4 +107,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(mapStateToProps, null)(App);

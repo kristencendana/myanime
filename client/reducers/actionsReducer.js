@@ -15,9 +15,9 @@ const actionsReducer = (state = initialState, action) => {
   const newState = Object.assign({}, state);
 
   switch(action.type){
-    // case types.SET_LOGIN:
-    //   newState.isLoggedIn = true;
-    //   return newState;
+    case types.SET_LOGIN:
+      newState.isLoggedIn = actions.payload;
+      return newState;
     case types.ADD_ANIME:
       newState.newAnimeName = document.getElementById('input').value;
       newState.totalAnimes++;

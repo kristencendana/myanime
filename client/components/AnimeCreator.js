@@ -2,6 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux'; // you only need to use connect when you are either mapDispatchToprops or mapStateToProps in that file
 import * as actions from '../actions/actions.js';
 
+const mapDispatchToProps = dispatch => ({
+  addStars : (animeName) => dispatch(actions.addStarsActionCreator(animeName)),
+  removeStars : (animeName) => dispatch(actions.removeStarsActionCreator(animeName)),
+  deleteAnime : (animeName) => dispatch(actions.deleteAnimeActionCreator(animeName)),
+  addAnime : (animeName) => dispatch(actions.addAnimeActionCreator(animeName))
+});
+
 const AnimeCreator = props => {
   //button click or dispatch
   const handleClick = () => {
@@ -23,5 +30,5 @@ const AnimeCreator = props => {
 };
 //updating our state with the add market payload
 
-// export default connect(null, mapDispatchToProps)(MarketCreator);
-export default AnimeCreator;
+export default connect(null, mapDispatchToProps)(AnimeCreator);
+// export default AnimeCreator;

@@ -25,3 +25,7 @@ export const removeStarsActionCreator = animeName => ({
   payload: animeName,
 });
 
+export const setLoginActionCreator = boolean => ({
+  type: types.SET_LOGIN,
+  payload: boolean,
+});
