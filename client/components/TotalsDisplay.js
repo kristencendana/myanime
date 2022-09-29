@@ -2,17 +2,17 @@
  import { connect } from 'react-redux';
  
  // makes a copy of the entire original state
-//  const mapStateToProps = state => ({
-//    markets: state.markets
-//  });
+ const mapStateToProps = state => ({
+  totalAnimes: state.animes.totalAnimes
+ });
  
  const TotalsDisplay = props => (
    <div className="innerbox" id="totals">
      <label htmlFor="totalAnime">Total Anime:</label>
-     {/* <span id="totalCards">{props.markets.totalCards}</span> */}
+     <span id="totalAnime">{props.totalAnimes}</span>
    </div>
  );
  
- export default TotalsDisplay;
+//  export default TotalsDisplay;
 
- //connect(mapStateToProps, null)(TotalsDisplay);
+ export default connect(mapStateToProps, null)(TotalsDisplay);

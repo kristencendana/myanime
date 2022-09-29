@@ -4,7 +4,6 @@ import * as types from '../constants/actionTypes';
 //   type: types.SET_LOGIN,
 //   payload: login,
 // });
-
 export const addAnimeActionCreator = animeName => ({
   type: types.ADD_ANIME,
   payload: animeName,

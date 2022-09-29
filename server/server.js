@@ -67,13 +67,13 @@ app.get("/signup", (req, res) => {
 //posting signup
 app.post('/signup', userController.createUser,
 cookieController.setSSIDCookie, (req, res) => {
-  return res.status(200); // maybe redirect??
+  return res.status(200).redirect("/"); // maybe redirect??
 })
 
 // login userController.verifyUser,
 app.post('/login', userController.verifyUser, cookieController.setSSIDCookie, 
 (req, res) => {
-  return res.status(200).send("User Found!");
+  return res.status(200).send("User Found and Logged In!");
   // .sendFile(path.resolve(__dirname, "../client/loggedin.html"));
 })
 // app.post('/api/login', (req, res) => {

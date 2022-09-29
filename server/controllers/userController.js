@@ -11,12 +11,12 @@ userController.createUser = (req, res, next) => {
   console.log(username)
   console.log(password)
   if (!username || !password) {
-    return next("Username and password are undefined");
+    return next("Username and password are undefined.");
   }
 
   User.create({ username: username, password: password }, (err, user) => {
     if (!user) {
-      return next(err);
+      return next("Invalid Username or Password.");
     }
 
     // console.log(user);
@@ -41,7 +41,7 @@ userController.verifyUser = (req, res, next) => {
   User.findOne({ username: username }, (err, user) => {
     // compare user's password with req.body.password
     if (!user) {
-      return next("Username not found");
+      return next("Username not found.");
     }
 
     if (user.password === password) {
@@ -50,7 +50,7 @@ userController.verifyUser = (req, res, next) => {
       // console.log(res.locals.id);
       return next();
     } else {
-      return next("Password is incorrect");
+      return next("Password is incorrect.");
     }
   });
 };

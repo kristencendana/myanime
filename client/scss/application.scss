@@ -1,3 +1,87 @@
+// // .element {
+// //   background: linear-gradient(to right, #43c6ac, #191654);
+// // }
+// // body {
+// //   display: flex;
+// // }
+// // .picture {
+// //   height: 100%;
+// //   position: fixed;
+// //   top: 0;
+// // }
+
+// body, html {
+//   height: 100%;
+// }
+
+// .bg {
+//   /* The image used */
+//   background-image: url("https://img.freepik.com/free-vector/vibrant-summer-ombre-background-vector_53876-105765.jpg?w=826&t=st=1664492130~exp=1664492730~hmac=a25ad2624a9bfdc59ec74a1bd03bb2ee3f307cfbfd0da7448dcb06d13f01bdf3");
+
+//   /* Full height */
+//   height: 100%;
+
+//   /* Center and scale the image nicely */
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }
+// // body {
+// //   background-color: linear-gradient(to top, rgba(67, 133, 246, 0.5), rgba(122, 221, 140, 0.5), lighten($tertiary,35%));
+// // }
+
+// /* mixinの定義 */
+// // @mixin bg-gradient($angle: 180deg, $color: #0bd, $amount: 20%) {
+// //   background: linear-gradient($angle, $color, adjust-hue($color, $amount)) fixed;
+// // }
+
+// // /* 必要箇所でmixinの呼び出し */
+// // body {
+// //     @include bg-gradient(90deg, #fbb, 100%);
+// // }
+
+// // h1 {
+// //   font-family: 'Sansita', sans-serif;
+// //   color: #fff;
+// //   margin: 180px 0;
+// //   text-align: center;
+// //   font-size: 3rem;
+// //   text-shadow: 2px 2px rgba(#000, .2);
+// // }
+html {
+  font-size: 1.5vw;
+}
+header {
+  height: 100px;
+  text-align: center;
+  // background: linear-gradient(to top, #fb9595, #abfbff);
+  // background: linear-gradient(to top, rgba(67, 133, 246, 0.5), rgba(122, 221, 140, 0.5), lighten($tertiary,35%));
+}
+header {
+  background: linear-gradient(to bottom, #fb9595, #abfbff);
+  padding-right: -20px;
+  margin: 0;
+  // padding-top: -20px;
+  // position: fixed;
+}
+h1, h3 {
+  margin: 0;
+}
 body {
-  background-color:aquamarine;
+  background-color: black;
+}
+main {
+  background: linear-gradient(to top, #fb9595, #abfbff);
+  margin: 0;
+  height: 700px;
+  padding-left: 50px;
+}
+.primaryButton {
+  background-color:  rgba(241, 110, 110, 0.5);
+  box-shadow: 2px 2px 2px rgb(56, 126, 224);;
+  border-radius: 0.2rem;
+  margin: 10px;
+  border-color: lighten(rgba(67, 133, 246, 0.5), 35%);
+
+  transition: 0.4s ease-in-out;
 }

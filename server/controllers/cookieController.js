@@ -19,7 +19,7 @@ cookieController.setSSIDCookie = (req, res, next) => {
   // write code here
   res.cookie("ssid", res.locals.id);
   sessionModel.create({ cookieId: res.locals.id }, (err, session) => {
-    // console.log(session);
+    console.log(session);
     next();
   });
 };
