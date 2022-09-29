@@ -2,23 +2,24 @@
  import { connect } from 'react-redux';
  import * as actions from '../actions/actions.js';
  
-//  const mapDispatchToProps = dispatch => ({
-//    addCard : (marketId) => dispatch(actions.addCardActionCreator(marketId)),
-//    deleteCard : (marketId) => dispatch(actions.deleteCardActionCreator(marketId))   
-//  });
+ const mapDispatchToProps = dispatch => ({
+   addStars : (animeName) => dispatch(actions.addStarsActionCreator(animeName)),
+   removeStars : (animeName) => dispatch(actions.removeStarsActionCreator(animeName)),
+   deleteAnime : (animeName) => dispatch(actions.deleteAnimeActionCreator(animeName)),
+   addAnime : (animeName) => dispatch(actions.addAnimeActionCreator(animeName))
+ });
  
-
  const Anime = props => {
  
-  //  const addCardButton = () => {
-  //    const input = document.querySelector('button');
-  //    props.addCard(props.market.marketId);
-  //  };
+   const addStarsButton = () => {
+     const input = document.querySelector('button');
+     props.addStars(props.anime.animeName);
+   };
  
-  //  const deleteAnimeButton = () => {
-  //    const input = document.querySelector('button');
-  //    props.deleteAnime(props.market.marketId);
-  //  };
+   const removeStarsButton = () => {
+     const input = document.querySelector('button');
+     props.removeStars(props.anime.animeName);
+   };
  
    return (
      <div className="AnimeBox">
@@ -27,11 +28,10 @@
        {/* <h4>Location:{props.market.location}</h4>
        <h4>Cards:{props.market.cards}</h4> */}
        {/* <h4>% of total:{props.market.percentOfTotal}</h4> */}
-       {/* <button id="button" name="addCard" onClick={addCardButton}>Add Card</button> */}
-       {/* <button id="button" name="deleteAnime" onClick={deleteAnimeButton}>Delete Card</button> */}
+       <button id="button" name="addStars" onClick={addStarsButton}>Add Stars</button>
+       <button id="button" name="deleteAnime" onClick={removeStarsButton}>Remove Stars</button>
      </div>
    );
  };
- export default Anime;
- //connect (null, mapDispatchToProps)(Market)
+ export default connect (null, mapDispatchToProps)(Anime);
  

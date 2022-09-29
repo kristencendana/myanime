@@ -8,3 +8,6 @@
 
 export const SET_LOGIN = 'SET_LOGIN';
 export const ADD_ANIME = 'ADD_ANIME';
+export const DELETE_ANIME = 'DELETE_ANIME';
+export const ADD_STARS = 'ADD_STARS';
+export const REMOVE_STARS = 'REMOVE_STARS';
