@@ -110,7 +110,7 @@ main {
   transition: 0.4s ease-in-out;
 }
 .AnimeBox:hover {
-    transform: scale(1.15);;
+    transform: scale(1.1);;
 }
 .animeTitles {
   display: flex;
@@ -134,7 +134,12 @@ main {
   right: 0;
 }
 
-// .displayBox {
-//   display: flex;
-//   flex-wrap: wrap;
-// }
+.displayBox {
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.displayBox>* {
+    flex: 1 1 1;
+}
