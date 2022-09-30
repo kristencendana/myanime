@@ -81,10 +81,10 @@ body {
 main {
   // background: linear-gradient(to top, #ffb8b8, #abfbff);
   background: linear-gradient(to top, #faaca8, #a2deff);
-  margin: 0px;
-  height: 700px;
+  margin: 0;
+  height: 750px;
   padding-left: 50px;
-  margin-top:-1px;
+  margin-top:0px;
 }
 .primaryButton {
   background-color:  rgba(255, 174, 174, 0.5);
@@ -95,7 +95,17 @@ main {
 
   transition: 0.4s ease-in-out;
 }
-
+// .container {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     flex-direction: column;
+//     // border: 1px solid rgba(78, 78, 78, 0.5);
+//     // border-radius: 5px;
+//     // width: 200px;
+//     // flex: 1 0 18%;
+//     // transition: 0.4s ease-in-out;
+// }
 .AnimeBox {
   border: 1px solid rgba(78, 78, 78, 0.5);
   border-radius: 5px;
@@ -135,11 +145,11 @@ main {
 }
 
 .displayBox {
-  width: 180px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
 }
-.displayBox>* {
-    flex: 1 1 1;
-}
+// .displayBox>* {
+//     flex: 1 1 1;
+// }

@@ -33,6 +33,9 @@ const actionsReducer = (state = initialState, action) => {
         newState.totalAnimes = state.totalAnimes;
 
         newState.animeList = state.animeList.filter((anime, i) => {
+          if (state.animeList[i].animeName == action.payload){
+            newState.totalAnimes--;
+          };
           return (state.animeList[i].animeName !== action.payload)
           // {
             // newState.totalAnimes--;

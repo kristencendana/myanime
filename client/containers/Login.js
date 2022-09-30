@@ -49,15 +49,15 @@ const Login = (props) => {
     return (
     
       <div>
-        <h1 className="login" >Login</h1>
+        <h2 className="login" >Login</h2>
         {/* method="POST" action='/login' type='submit' */}
           <form >
             <input id="username" name='username' type='text' placeholder='username'></input>
             <input id="password" name='password' type='password' placeholder='password'></input>
             <input className="primaryButton" onClick={props.handleClick} value='login'></input>
           </form>
-          <a href='./signup'>Sign up</a> 
-          {(props.isLoggedIn == true) && <Home />}
+            <a href='./signup'>Sign up</a> 
+            {/* {(props.isLoggedIn == true) && <Home />}   */}
       </div> 
     );
   // }

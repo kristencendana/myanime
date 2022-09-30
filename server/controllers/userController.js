@@ -6,23 +6,18 @@ const userController = {};
 // create and save a new User into the database
 userController.createUser = (req, res, next) => {
   const { username, password } = req.body;
-  // console.log("req"+ JSON.stringify(req));
-  // console.log("req.body" + JSON.stringify(req.body));
-  console.log(username)
-  console.log(password)
+
   if (!username || !password) {
-    return next("Username and password are undefined.");
+    return next("Username and password are undefined");
   }
 
   User.create({ username: username, password: password }, (err, user) => {
     if (!user) {
-      return next("Invalid Username or Password.");
+      return next(err);
     }
-
     // console.log(user);
     // const { id } = user._id;
     res.locals.id = user._id;
-    // console.log(res.locals.id);
     // console.log(res.locals.id);
     next();
   });
