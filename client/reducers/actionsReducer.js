@@ -29,6 +29,20 @@ const actionsReducer = (state = initialState, action) => {
       animeList.push(newAnime);
       newState.animeList = animeList;
       return newState;
+      case types.DELETE_ANIME:
+        newState.totalAnimes = state.totalAnimes;
+
+        newState.animeList = state.animeList.filter((anime, i) => {
+          return (state.animeList[i].animeName !== action.payload)
+          // {
+            // newState.totalAnimes--;
+            // return {animeName, stars};
+            // } 
+            // return;
+        // });
+        });
+        return newState;
+
     case types.ADD_STARS:
       // animeList = state.animeList.slice();
       // action.payload.stars++;
