@@ -29,7 +29,7 @@ const AnimeCreator = props => {
       <h4>Create New Anime</h4>
       <div>
         <input id="input" onChange={e => setAnime(e.target.value)} type="text" name="submit" placeholder='anime name'></input>
-        <button id ="button" onClick={handleClick} >Add Anime</button>
+        <button id ="button" className="primaryButton" onClick={handleClick} >Add Anime</button>
       </div>
     </div>
   );

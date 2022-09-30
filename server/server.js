@@ -65,10 +65,10 @@ app.get("/signup", (req, res) => {
 // })
 
 //posting signup
-app.post('/signup', userController.createUser,
-cookieController.setSSIDCookie, (req, res) => {
+app.post('/signup', userController.createUser, (req, res) => {
   return res.status(200).redirect("/"); // maybe redirect??
 })
+//cookieController.setSSIDCookie,
 
 // login userController.verifyUser,
 app.post('/login', userController.verifyUser, cookieController.setSSIDCookie, 

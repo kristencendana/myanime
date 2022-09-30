@@ -8,7 +8,7 @@
  
  const TotalsDisplay = props => (
    <div className="innerbox" id="totals">
-     <label htmlFor="totalAnime">Total Anime:</label>
+     <label className="totalAnime">Watchlist Anime Totals:</label>
      <span id="totalAnime">{props.totalAnimes}</span>
    </div>
  );

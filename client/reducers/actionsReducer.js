@@ -5,7 +5,7 @@ import * as types from '../constants/actionTypes';
 const initialState = {
   isLoggedIn: false,
   totalAnimes: 0,
-  animeList: [{animeName: "cat", stars: 2}],
+  animeList: [],
   newAnimeName: '',
 }
 

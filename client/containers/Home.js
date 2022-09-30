@@ -28,8 +28,9 @@ class Home extends Component {
     return (
       <div className="container">
         <h1>
-          Home Page:
+          Your Anime List
         </h1>
+        {/* <Link to="/App">Back to Login</Link> */}
         <TotalsDisplay />
         <AnimeContainer />
       </div>

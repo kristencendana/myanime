@@ -85,16 +85,16 @@ class App extends Component {
   
   async handleLoginClick () {
     // const navigate = useNavigate();
-    console.log("using login click");
+    // console.log("using login click");
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
-    console.log(username);
-    console.log(password);
+    // console.log(username);
+    // console.log(password);
     const user = {
       username: username,
       password: password
     };
-    alert("buttonclicked");
+    // alert("buttonclicked");
     try {
       const response = await axios.post('/login', user);
       console.log(response.data);
@@ -113,6 +113,7 @@ class App extends Component {
       // navigate('/Home');
       // console.log(props);
       // props.setLogin(true);
+      alert("User Found!")
       return response;
     } catch (error) {
       console.log(error);
@@ -152,7 +153,7 @@ class App extends Component {
   // }
 // cookie.isloggedin is what you set on the backend when you hanel the post to /login
   render() {
-    console.log("loggedIn"+ this.props.isLoggedIn);
+    // console.log("loggedIn"+ this.props.isLoggedIn);
 
     // const { rows, turn, winner, gameList } = this.state;
     // const handleClick = this.handleClick;
@@ -168,7 +169,7 @@ class App extends Component {
         {/* <p>App Component {Greeting}</p> */} 
         {/* <Home /> */}
         {!(this.props.isLoggedIn) && <Login handleClick={this.handleLoginClick}/>}
-        <Link to="/Home">Home</Link>
+        <Link to="/Home" className="links">Home</Link>
         {/* <Login />
         <Home/> */}
         {/* dont freak out when not see home */}

@@ -21,7 +21,7 @@
   //  }
    return(
      <div className="displayBox">
-       <h4>Animes</h4>
+       {/* <h4>Animes</h4> */}
        {animes}
        {/* <Anime anime ={props.animeList} /> */}
      </div>

@@ -58,7 +58,7 @@ header {
   // background: linear-gradient(to top, rgba(67, 133, 246, 0.5), rgba(122, 221, 140, 0.5), lighten($tertiary,35%));
 }
 header {
-  background: linear-gradient(to bottom, #fb9595, #abfbff);
+  background: linear-gradient(to bottom, #faaca8, #a2deff);
   padding-right: -20px;
   margin: 0;
   // padding-top: -20px;
@@ -67,21 +67,58 @@ header {
 h1, h3 {
   margin: 0;
 }
+
+h3 {
+  font-size: 15px;
+}
+
+// .animeName {
+
+// }
 body {
   background-color: black;
 }
 main {
-  background: linear-gradient(to top, #fb9595, #abfbff);
-  margin: 0;
+  // background: linear-gradient(to top, #ffb8b8, #abfbff);
+  background: linear-gradient(to top, #faaca8, #a2deff);
+  margin: 0px;
   height: 700px;
   padding-left: 50px;
+  margin-top:-1px;
 }
 .primaryButton {
-  background-color:  rgba(241, 110, 110, 0.5);
+  background-color:  rgba(255, 174, 174, 0.5);
   box-shadow: 2px 2px 2px rgb(56, 126, 224);;
   border-radius: 0.2rem;
   margin: 10px;
   border-color: lighten(rgba(67, 133, 246, 0.5), 35%);
 
   transition: 0.4s ease-in-out;
+}
+
+.AnimeBox {
+  border: 1px solid rgba(78, 78, 78, 0.5);
+  border-radius: 5px;
+  width: 180px;
+  flex: 1 0 18%;
+  min-width: 280px;
+  background-color: white;
+  border-radius: 0.5rem;
+  // border: 1px solid lighten($tertiary,20%);
+  box-shadow: 5px 5px 5px rgba(78, 78, 78, 0.5);
+  margin: 5px;
+  transition: 0.4s ease-in-out;
+}
+.AnimeBox:hover {
+    transform: scale(1.2);;
+}
+.animeTitles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.primaryButton:hover {
+  transform: scale(1.1);
 }
