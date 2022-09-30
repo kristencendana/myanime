@@ -54,6 +54,7 @@ html {
 header {
   height: 100px;
   text-align: center;
+  padding-bottom: 20px;
   // background: linear-gradient(to top, #fb9595, #abfbff);
   // background: linear-gradient(to top, rgba(67, 133, 246, 0.5), rgba(122, 221, 140, 0.5), lighten($tertiary,35%));
 }
@@ -64,7 +65,7 @@ header {
   // padding-top: -20px;
   // position: fixed;
 }
-h1, h3 {
+h1, h2, h3 {
   margin: 0;
 }
 
