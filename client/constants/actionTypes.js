@@ -11,3 +11,4 @@ export const ADD_ANIME = 'ADD_ANIME';
 export const DELETE_ANIME = 'DELETE_ANIME';
 export const ADD_STARS = 'ADD_STARS';
 export const REMOVE_STARS = 'REMOVE_STARS';;
+export const UPDATE_TOP_ANIME = 'UPDATE_TOP_ANIME'

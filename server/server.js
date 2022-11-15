@@ -5,7 +5,7 @@ const path = require('path');
 const PORT = 3000;
 const mongoose = require('mongoose');
 // the mongoDB database
-const MONGO_URI = "mongodb+srv://143Iloveonepiece!@cluster0.g51mo0f.mongodb.net/?retryWrites=true&w=majority"
+const MONGO_URI = "mongodb+srv://kcendana:testing1234@cluster0.hnq6jje.mongodb.net/?retryWrites=true&w=majority"
 mongoose.connect(MONGO_URI, {
   // options for the connect method to parse the URI
   useNewUrlParser: true,

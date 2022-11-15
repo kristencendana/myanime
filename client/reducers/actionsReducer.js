@@ -7,6 +7,7 @@ const initialState = {
   totalAnimes: 0,
   animeList: [],
   newAnimeName: '',
+  topAnime: [],
 }
 
 const actionsReducer = (state = initialState, action) => {
@@ -15,8 +16,13 @@ const actionsReducer = (state = initialState, action) => {
   const newState = Object.assign({}, state);
 
   switch(action.type){
+    case types.UPDATE_TOP_ANIME:
+      console.log(newState)
+      newState.topAnime = action.payload;
+      console.log(newState.topAnime)
+      return newState;
     case types.SET_LOGIN:
-      newState.isLoggedIn = actions.payload;
+      newState.isLoggedIn = action.payload;
       return newState;
     case types.ADD_ANIME:
       // newState.newAnimeName = action.payload;
